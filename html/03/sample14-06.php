@@ -1,0 +1,36 @@
+<?php
+  session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <?php
+
+    print $_SESSION[setdata1] . "<br>";
+    print $_SESSION[setdata2] . "<br>";
+    print $_SESSION[setdata3] . "<br>";
+    print $_SESSION[setdata4] . "<br>";
+    print $_SESSION[setdata5] . "<br>";
+
+
+    $_SESSION = array();
+    session_destroy();
+
+    print $_SESSION[setdata1] . "<br>";
+    print $_SESSION[setdata2] . "<br>";
+    print $_SESSION[setdata3] . "<br>";
+    print $_SESSION[setdata4] . "<br>";
+    print $_SESSION[setdata5] . "<br>";
+
+    if (! isset($_SESSION[setdata3])) {
+      print "セッション変数は使われていません！<br>";
+    }
+    
+  ?>
+</body>
+</html>
