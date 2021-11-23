@@ -2,7 +2,7 @@ version: "3"
 
 services:
   php:
-    image: php7.2-apache-trial2
+    build: .
     volumes:
       - ./html:/var/www/html
     ports:
@@ -12,6 +12,7 @@ services:
     image: mysql:5.7
     volumes:
       - ./mysql:/var/lib/mysql
+      - ./initdb.d:/docker-entrypoint-initdb.d
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=test
@@ -19,3 +20,4 @@ services:
       - MYSQL_PASSWORD=test
     container_name: mysql5.7-trial2
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    restart: always
