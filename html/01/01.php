@@ -9,19 +9,7 @@
 </head>
 
 <body>
-    <?php
-    print "01";
-
-
-    print "<br>";
-
-    foreach (glob('./*') as $file) {
-        if (is_file($file)) {
-            echo htmlspecialchars($file);
-        }
-    }
-    ?>
-
+    <h1>01</h1>
 </body>
 
 </html>
